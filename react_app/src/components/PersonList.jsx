@@ -22,6 +22,7 @@ function PersonList() {
               <img src={item.gender=="ชาย" ? boy : girl} width={50} height={50} />             
               <h3>
                 {item.name}
+                <button>ลบ</button>
               </h3>
             </li>
           ))}

@@ -6,13 +6,9 @@ services:
       dockerfile: docker/Dockerfile   
     ports:
       - 5173:5173
-    develop:
-      watch:
-        - action: sync
-          path: ./react_app/
-          target: /usr/src/app/react_app
-          ignore:
-            - node_modules
+    volumes:
+      - ./react_app:/usr/src/app/react_app
+      - /usr/src/app/react_app/node_modules
     networks:
       - react_learn
         
