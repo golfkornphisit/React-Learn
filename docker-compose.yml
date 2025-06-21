@@ -1,0 +1,21 @@
+services:
+  react_app:
+    container_name: React_App
+    build: 
+      context: .
+      dockerfile: docker/Dockerfile   
+    ports:
+      - 5173:5173
+    develop:
+      watch:
+        - action: sync
+          path: ./react_app/
+          target: /usr/src/app/react_app
+          ignore:
+            - node_modules
+    networks:
+      - react_learn
+        
+networks:
+  react_learn:
+    driver: bridge
