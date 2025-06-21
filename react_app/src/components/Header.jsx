@@ -1,6 +1,6 @@
 function Header() {
   return(
-    <h1>แอพของฉัน</h1>
+    <h1>My Appicetion</h1>
   );
 }
 export default Header;

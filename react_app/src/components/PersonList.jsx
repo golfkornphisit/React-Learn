@@ -1,11 +1,15 @@
 import { useState } from "react";
+import boy from "../assets/boy.svg";
+import girl from "../assets/girl.svg";
 
 function PersonList() {
-  const [data, setData] = useState([
+  const [data] = useState([
     { id: 1, name: "Korn", gender: "ชาย" },
     { id: 2, name: "Nim", gender: "หญิง" },
     { id: 3, name: "John Doe", gender: "ชาย" },
+    { id: 4, name: "Poy", gender: "หญิง" },
   ]);
+
   const [show, setShow] = useState(true);
   return (
     <>
@@ -15,9 +19,9 @@ function PersonList() {
         {show &&
           data.map((item) => (
             <li key={item.id}>
-              {" "}
+              <img src={item.gender=="ชาย" ? boy : girl} width={50} height={50} />             
               <h3>
-                {item.id}| {item.name}| {item.gender}
+                {item.name}
               </h3>
             </li>
           ))}
