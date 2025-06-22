@@ -10,3 +10,13 @@ main {
   margin: auto;
   padding: 10px;
 }
+.light {
+  background-color: #f0f0f0;
+  color: #333;
+  transition: all 0.5s;
+}
+.dark {
+  background-color: #333;
+  color: #f0f0f0;
+  transition: all 0.5s;
+}

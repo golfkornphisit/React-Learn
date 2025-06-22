@@ -1,12 +1,21 @@
 import "./Header.css";
-function Header(props) {
   // Destructuring props to get title
-  const { title } = props;
+  const Header = ({ title, theme, setTheme }) => {
+
+    function toggleTheme() {
+      if(theme === "light") {
+        setTheme("dark");
+      }else {
+        setTheme("light");
+      }
+    }
   return (
     <nav>
       <h1>{title}</h1>
-      <button>Ligth/Dark</button>
+      <button onClick={toggleTheme}>Ligth/Dark : {theme}</button>
     </nav>    
   );
 };
+
+
 export default Header;
