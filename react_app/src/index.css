@@ -12,11 +12,3 @@ button {
   border-radius: 5px;
 
 }
-main {
-  max-width: 1200px;
-  min-height: 90vh;
-  margin: auto;
-  padding: 10px;
-  border: 1px solid #000; 
-
-}

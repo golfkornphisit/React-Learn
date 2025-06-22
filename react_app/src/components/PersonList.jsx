@@ -1,6 +1,7 @@
 import { useState } from "react";
 import boy from "../assets/boy.svg";
 import girl from "../assets/girl.svg";
+import "./PersonList.css";
 
 function PersonList() {
   const [data] = useState([
@@ -11,23 +12,29 @@ function PersonList() {
   ]);
 
   const [show, setShow] = useState(true);
+  const myStyle = {
+    color: "blue",
+    fontSize: "30px",
+  }
   return (
-    <>
-      <h1>จำนวนประชากร {data.length} คน</h1>
+    <div className="container">
+      <div className="header">
+        <h2 style={myStyle}>จำนวนประชากร {data.length} คน</h2>
       <button onClick={() => setShow(!show)}>{show ? "ซ่อน" : "แสดง"}</button>
-      <u>
+      </div>      
+      <ul>
         {show &&
           data.map((item) => (
             <li key={item.id}>
               <img src={item.gender=="ชาย" ? boy : girl} width={50} height={50} />             
-              <h3>
-                {item.name}
+              <p style={myStyle}>{item.name}</p>
+              <div className="control">
                 <button>ลบ</button>
-              </h3>
+              </div>              
             </li>
           ))}
-      </u>
-    </>
+      </ul>
+    </div>
   );
 }
 export default PersonList;
