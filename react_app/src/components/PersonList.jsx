@@ -19,13 +19,13 @@ function PersonList() {
   return (
     <div className="container">
       <div className="header">
-        <h2 style={myStyle}>จำนวนประชากร {data.length} คน</h2>
+        <h2 style={{color:"red", fontSize:"25px"}}>จำนวนประชากร {data.length} คน</h2>
       <button onClick={() => setShow(!show)}>{show ? "ซ่อน" : "แสดง"}</button>
       </div>      
       <ul>
         {show &&
           data.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} style={{borderStyle: "solid",borderColor: item.gender=="ชาย" ? "green" : "pink", borderWidth: "1px", padding: "10px", margin: "10px"}}>
               <img src={item.gender=="ชาย" ? boy : girl} width={50} height={50} />             
               <p style={myStyle}>{item.name}</p>
               <div className="control">
