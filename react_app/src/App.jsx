@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import PersonList from "./components/PersonList";
+import AddForm from "./components/AddForm";
 import { useState } from "react";
 import "./App.css";
 
@@ -18,6 +19,7 @@ function App() {
     <div className="App">
       <Header title="MY APP"/>
       <main>
+        <AddForm/>
         <PersonList data={data} deleteUser={deleteUser}/>
       </main>
       
