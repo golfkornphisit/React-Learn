@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./PersonList.css";
 import User from "./User";
 
-function PersonList({data}) {
+function PersonList({data, deleteUser}) {
   const [show, setShow] = useState(true);  
   return (
     <div className="container">
@@ -13,7 +13,7 @@ function PersonList({data}) {
       <ul>
         {show &&
           data.map((item) => (
-            <User key={item.id} item={item}/>
+            <User key={item.id} item={item} deleteUser={deleteUser}/>
           ))}
       </ul>
     </div>
