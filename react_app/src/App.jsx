@@ -12,7 +12,7 @@ function App() {
     { id: 4, name: "Poy", gender: "หญิง" },
   ]);
 
-  const [theme, setTheme] = useState("light"); // state to manage theme
+  const [theme, setTheme] = useState(localStorage.getItem("mode") || "light"); // state to manage theme
 
   function deleteUser(id) {
     const result = data.filter((user) => user.id !== id); // filter out the user with the given id
@@ -20,8 +20,8 @@ function App() {
   }
 
   useEffect(() => {
-    console.log("Render Component");
-  }, [data]); // useEffect to log when data changes
+    localStorage.setItem("mode", theme); // save theme to localStorage
+  }, [theme]); // useEffect to log when data changes
 
   return (
     <div className={theme}>
