@@ -1,4 +1,6 @@
 import "./Header.css";
+import { FiSun } from "react-icons/fi";
+import { IoMoonOutline } from "react-icons/io5";
   // Destructuring props to get title
   const Header = ({ title, theme, setTheme }) => {
 
@@ -12,7 +14,10 @@ import "./Header.css";
   return (
     <nav>
       <h1>{title}</h1>
-      <button onClick={toggleTheme}>Ligth/Dark : {theme}</button>
+      <span onClick={toggleTheme}>
+        {theme==="dark" ? <FiSun size={30}/> : <IoMoonOutline size={30}/> }
+      </span>
+      
     </nav>    
   );
 };

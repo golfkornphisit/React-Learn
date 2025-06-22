@@ -10,3 +10,6 @@ nav{
     border-bottom: 1px solid #d7d7d7;
 
 }
+span {
+    cursor: pointer;
+}
