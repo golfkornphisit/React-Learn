@@ -1,0 +1,24 @@
+import boy from "../assets/boy.svg";
+import girl from "../assets/girl.svg";
+
+export default function User({ item }) {
+  return (
+    <>
+      <li
+        style={{
+          borderStyle: "solid",
+          borderColor: item.gender == "ชาย" ? "green" : "pink",
+          borderWidth: "1px",
+          padding: "10px",
+          margin: "10px",
+        }}
+      >
+        <img src={item.gender == "ชาย" ? boy : girl} width={50} height={50} />
+        <p>{item.name}</p>
+        <div className="control">
+          <button>ลบ</button>
+        </div>
+      </li>
+    </>
+  );
+}
