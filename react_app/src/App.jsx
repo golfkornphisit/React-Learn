@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import PersonList from "./components/PersonList";
 import AddForm from "./components/AddForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -15,9 +15,13 @@ function App() {
         const result = data.filter((user) => user.id !== id); // filter out the user with the given id
         setData(result); // update the state with the new data
     }
+    useEffect(() => {
+        console.log("Render Component")
+    },[data]); // useEffect to log when data changes
+
   return (
     <div className="App">
-      <Header title="MY APP"/>
+      <Header title="My Appicetion"/>
       <main>
         <AddForm data={data} setData={setData}/>
         <PersonList data={data} deleteUser={deleteUser}/>
