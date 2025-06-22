@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Header title="MY APP"/>
       <main>
-        <AddForm/>
+        <AddForm data={data} setData={setData}/>
         <PersonList data={data} deleteUser={deleteUser}/>
       </main>
       

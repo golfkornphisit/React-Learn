@@ -1,17 +1,23 @@
 import "./AddForm.css"
 import { useState } from "react";
 
-export default function AddForm() {
+export default function AddForm(props) {
     const [name, setName] = useState("");
     const [gender, setGender] = useState("ชาย");
+
+    const {data, setData} = props
 
     function saveData(e) {
         e.preventDefault();
         const person= {
+            id: Math.floor(Math.random()*1000), // Generate a random id
             name:name,
             gender:gender
     }
     console.log(person);
+    setData([...data, person]); // Add the new person to the existing data
+    setName("");
+    setGender("ชาย");
 }
     return (
         <section className="container">
